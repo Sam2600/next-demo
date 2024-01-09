@@ -4,7 +4,7 @@ import { pageRoutes } from "./routes";
 
 const routes = pageRoutes.map((pr) => (
   <li>
-    <Link className="text-md" href={pr.href}>
+    <Link className="capitalize" href={pr.href}>
       {pr.label}
     </Link>
   </li>
@@ -12,22 +12,13 @@ const routes = pageRoutes.map((pr) => (
 
 export const Nav = () => {
   return (
-    <div className="navbar bg-base-100">
-      <div className="flex-1 px-3">
-        <Link className="text-xl" href="/">
-          Home
+    <nav className="bg-base-300 py-4">
+      <div className="navbar px-8 max-w-6xl mx-auto flex-col sm:flex-row">
+        <Link href="/" className="btn btn-primary">
+          Next.Js
         </Link>
+        <ul className="menu menu-horizontal md:ml-8">{routes}</ul>
       </div>
-      <div className="flex-none">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <details className="px-5">
-              <summary className="text-xl">Pages</summary>
-              <ul className="p-2 bg-base-100 rounded-t-none">{routes}</ul>
-            </details>
-          </li>
-        </ul>
-      </div>
-    </div>
+    </nav>
   );
 };

@@ -12,13 +12,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body style={{ backgroundColor: "white" }} className={inter.className}>
         <Nav />
         <main className='px-8 py-20 w-10/12 mx-auto'>
           {children}
         </main>
       </body>
-    </html>
+    </html >
   )
 }
 

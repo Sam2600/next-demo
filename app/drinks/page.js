@@ -18,15 +18,13 @@ const DrinkPage = async () => {
         const instruction = checkStrLength(drink?.strInstructions);
 
         {/** bg-base-100 */ }
-        return (
-            <DrinkCard drink={drink} instruction={instruction} key={drink.idDrink} />
-        )
+        return <DrinkCard drink={drink} instruction={instruction} key={drink.idDrink} />;
     })
 
     return (
-        <div className='flex flex-col gap-5 justify-center items-center my-10 rounded-lg shadow-lg p-10 m-5 mx-auto text-center bg-slate-200 text-black'>
-            <h1 className='text-2xl p-2'> Welcome to Kalaw Bar </h1>
-            <div className='flex flex-row justify-evenly gap-3 flex-wrap'>
+        <div className='flex flex-col gap-5 justify-center items-center mx-auto'>
+            <h1 className='text-3xl my-2 text-base-300 underline'> Drinku Barrto </h1>
+            <div className='flex flex-row justify-evenly bg-white shadow-xl gap-3 p-4 border border-zinc-400 rounded-xl flex-wrap'>
                 {drinks}
             </div>
         </div>

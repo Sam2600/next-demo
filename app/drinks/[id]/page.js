@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { fetchDrinks } from '../commons/common';
 import { drink_by_id_url } from '../commons/url';
+import Image from 'next/image';
 
 const DrinkById = async ({ params }) => {
 
@@ -19,20 +20,20 @@ const DrinkById = async ({ params }) => {
     const drink = fetchedDrink?.drinks[0];
 
     return (
-        <div>
-            <div className="card card-compact w-96 bg-base-100 shadow-xl">
-                <figure className="max-h-60"><img src={drink?.strDrinkThumb} alt="Drink" /></figure>
-                <div className="card-body">
-                    <h2 className="card-title">{drink?.strCategory}</h2>
-                    <p>{drink?.strInstructions}</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary">
-                            <Link href="/drinks">Back To List</Link>
-                        </button>
-                    </div>
+
+        <div className="card card-compact w-5/12 mx-auto bg-base-100 shadow-xl">
+            <figure className="max-h-80"><Image src={drink?.strDrinkThumb} width={500} height={500} alt="Drink" /></figure>
+            <div className="card-body">
+                <h2 className="card-title">{drink?.strDrink}</h2>
+                <p>{drink?.strInstructions}</p>
+                <div className="card-actions justify-end">
+                    <button className="btn btn-primary">
+                        <Link href="/drinks">Back To List</Link>
+                    </button>
                 </div>
             </div>
         </div>
+
     )
 }
 

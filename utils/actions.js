@@ -1,5 +1,6 @@
 import prisma from "@/utils/db";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 const getTasks = async () => {
 
@@ -20,7 +21,8 @@ const addTask = async (task) => {
         }
     });
 
-    revalidatePath("/prisma-example");
+    // revalidatePath("/prisma-example");
+    redirect("/prisma-example");
 }
 
 const deleteTask = async (id) => {
@@ -49,8 +51,6 @@ const getTaskById = async (id) => {
 
 const updateTask = async (id, data) => {
 
-
-
     await prisma.task.update({
 
         where: {
@@ -63,7 +63,7 @@ const updateTask = async (id, data) => {
         }
     });
 
-    revalidatePath("/prisma-example");
+    redirect("/prisma-example");
 }
 
 export default {

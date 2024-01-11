@@ -19,7 +19,7 @@ const RetisterPage = () => {
             <form action={submitTask} className='w-full flex flex-col gap-4 justify-between'>
                 <div className='w-full'>
                     <div className="label">
-                        <span className="label-text font-semibold text-base-200">Add you task</span>
+                        <span className="label-text font-semibold text-base-200">Add your task</span>
                     </div>
                     <input
                         type="text"
